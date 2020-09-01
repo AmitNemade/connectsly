@@ -1,8 +1,12 @@
 {
   "name": "video",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "main": "server.js",
+  "engines": {
+    "node": "12.*",
+    "npm": "6.*"
+  },
   "dependencies": {
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
@@ -29,6 +33,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "reactstrap": "^8.4.1",
+    "serve": "^11.3.2",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
     "socketio-file-upload": "^0.7.2",
@@ -36,14 +41,13 @@
   },
   "scripts": {
     "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\"",
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "server": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
-  "proxy": "http://localhost:4001",
   "eslintConfig": {
     "extends": "react-app"
   },
